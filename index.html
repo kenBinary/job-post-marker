@@ -1,16 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      @import "tailwindcss";
-    </style>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/popup.css" />
     <link rel="stylesheet" href="src/style.css" />
-    <title>olj-tools-extension</title>
+    <title>job-search-tools-extension</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body class="w-[330px] h-[500px]">
+    <header
+      class="flex flex-col justify-between items-center p-4 bg-slate-800 text-white"
+    >
+      <h1 class="text-xl font-bold">Job tracker</h1>
+      <p>Manage your job search tracking</p>
+    </header>
+
+    <main class="p-2 h-full overflow-y-auto border">
+      <div class="mb-4 rounded border shadow-lg p-2 bg-gray-100">
+        <div class="flex gap-2 justify-between items-center mb-2">
+          <div class="flex gap-2 items-center">
+            <div class="avatar">
+              <div class="w-8 rounded">
+                <img
+                  src="https://img.daisyui.com/images/profile/demo/batperson@192.webp"
+                />
+              </div>
+            </div>
+            <p class="text-base">OnlineJobs.ph</p>
+          </div>
+
+          <div class="flex gap-2">
+            <label class="label" for="auto-mark"> Auto Mark </label>
+            <input
+              type="checkbox"
+              checked="checked"
+              class="toggle"
+              id="auto-mark"
+            />
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs mb-1">CLEAR HISTORY</p>
+          <button class="btn btn-neutral btn-outline btn-block">
+            Reset All Marked Jobs
+          </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="stats border w-full shadow-md">
+          <div class="stat">
+            <div class="stat-title">Total Marked Jobs</div>
+            <div class="stat-value text-lg">89,400</div>
+          </div>
+        </div>
+      </div>
+    </main>
     <script type="module" src="/src/popup.ts"></script>
   </body>
 </html>
