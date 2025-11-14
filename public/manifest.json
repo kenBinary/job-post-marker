@@ -1,0 +1,17 @@
+{
+  "name": "OLJ Tools",
+  "description": "A set of tools for OLJ",
+  "version": "0.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "vite.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.onlinejobs.ph/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}

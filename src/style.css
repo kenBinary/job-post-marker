@@ -1,0 +1,19 @@
+.marked-as-viewed-btn {
+  background-color: oklch(70.7% 0.165 254.624);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: crosshair;
+  border-radius: 3px;
+  z-index: 1000;
+}
+
+.btn-viewed {
+  background-color: oklch(42.4% 0.199 265.638);
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: crosshair;
+  border-radius: 3px;
+  z-index: 1000;
+}
