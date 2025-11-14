@@ -1,6 +1,6 @@
-import { LOCAL_STORAGE_KEY_PREFIX } from "../constants/keyPrefixes";
-import { LOCAL_STORAGE_VALUE } from "../constants/keyValues";
-import { JobObserver } from "../utils/observer";
+import { LOCAL_STORAGE_KEY_PREFIX } from "../../constants/keyPrefixes";
+import { LOCAL_STORAGE_VALUE } from "../../constants/keyValues";
+import { JobObserver } from "../../utils/observer";
 
 function markAsViewed(button: HTMLButtonElement) {
   const jobKey = button.getAttribute("data-job-key");
