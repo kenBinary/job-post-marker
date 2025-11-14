@@ -15,6 +15,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
+    "@types/chrome": "^0.1.28",
+    "chrome-types": "^0.1.388",
     "daisyui": "^5.5.3",
     "tailwindcss": "^4.1.17"
   }
