@@ -11,7 +11,7 @@
     {
       "matches": ["https://www.onlinejobs.ph/*"],
       "js": ["content.js"],
-      "css": ["style.css"]
+      "css": ["content.css"]
     }
   ]
 }

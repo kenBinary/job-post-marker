@@ -1,4 +1,4 @@
 import { setupOljMarker } from "./content/olj/oljMarker";
-import "./style.css";
+import "./content.css";
 
 setupOljMarker();
