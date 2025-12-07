@@ -1,1 +1,3 @@
-console.log("Hello from popup!");
+import { oljAutoMarkerSetup } from "./popup/olj/oljAutoMarker";
+
+await oljAutoMarkerSetup();
