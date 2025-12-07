@@ -3,6 +3,7 @@
   "description": "A set of tools for OLJ",
   "version": "0.0.0",
   "manifest_version": 3,
+  "permissions": ["activeTab", "storage"],
   "action": {
     "default_popup": "index.html",
     "default_icon": "vite.svg"
@@ -13,5 +14,8 @@
       "js": ["content.js"],
       "css": ["content.css"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
