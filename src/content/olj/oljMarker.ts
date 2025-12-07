@@ -1,5 +1,6 @@
 import { LOCAL_STORAGE_KEY_PREFIX } from "../../constants/keyPrefixes";
 import { LOCAL_STORAGE_VALUE } from "../../constants/keyValues";
+import type { OLJ_AUTO_MARK_TOGGLE_STATE } from "../../types/chrome-storage-local.types";
 import { JobObserver } from "../../utils/observer";
 
 function markAsViewed(button: HTMLButtonElement) {
@@ -52,6 +53,7 @@ export function setupOljMarker() {
   const jobs: NodeListOf<HTMLDivElement> = document.querySelectorAll(
     "div.latest-job-post:has(> a[href^='/jobseekers/job/'])"
   );
+  const jobButtons: HTMLButtonElement[] = [];
 
   jobs.forEach((job) => {
     const anchor: HTMLAnchorElement | null = job.querySelector(
@@ -73,6 +75,7 @@ export function setupOljMarker() {
     }
 
     const newButton = button.cloneNode(true) as HTMLButtonElement;
+    jobButtons.push(newButton);
     newButton.setAttribute("data-job-key", jobKey);
 
     newButton.addEventListener("click", (event) => {
@@ -103,9 +106,34 @@ export function setupOljMarker() {
       markAsViewed(newButton);
     } else {
       unmarkAsViewed(newButton);
-      observer.observe(newButton);
     }
 
+    jobButtons.forEach(async (button) => {
+      const toggleState = (await chrome.storage.local.get([
+        "oljAutoMarkToggleState",
+      ])) as Partial<OLJ_AUTO_MARK_TOGGLE_STATE>;
+
+      if (
+        toggleState.oljAutoMarkToggleState !== undefined &&
+        toggleState.oljAutoMarkToggleState === true
+      ) {
+        observer.observe(button);
+      }
+    });
+
     job.appendChild(newButton);
+  });
+
+  chrome.storage.onChanged.addListener((changes, areaName) => {
+    if (areaName === "local") {
+      if (changes.oljAutoMarkToggleState) {
+        const storageChange = changes.oljAutoMarkToggleState;
+        if (storageChange.newValue === true) {
+          jobButtons.forEach((button) => observer.observe(button));
+        } else {
+          jobButtons.forEach((button) => observer.unobserve(button));
+        }
+      }
+    }
   });
 }
