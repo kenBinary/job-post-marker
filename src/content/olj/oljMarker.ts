@@ -12,9 +12,9 @@ function markAsViewed(button: HTMLButtonElement) {
   const jobState = localStorage.getItem(jobKey);
   if (jobState === LOCAL_STORAGE_VALUE.NOT_VIEWED) {
     localStorage.setItem(jobKey, LOCAL_STORAGE_VALUE.VIEWED);
-    button.textContent = "Viewed";
-    button.className = "btn-viewed";
   }
+  button.textContent = "Viewed";
+  button.className = "btn-viewed";
 }
 
 function unmarkAsViewed(button: HTMLButtonElement) {
@@ -27,14 +27,14 @@ function unmarkAsViewed(button: HTMLButtonElement) {
   const jobState = localStorage.getItem(jobKey);
   if (jobState === LOCAL_STORAGE_VALUE.VIEWED) {
     localStorage.setItem(jobKey, LOCAL_STORAGE_VALUE.NOT_VIEWED);
-    button.textContent = "Mark As Viewed";
-    button.className = "marked-as-viewed-btn";
   }
+  button.className = "marked-as-viewed-btn";
+  button.textContent = "Mark As Viewed";
 }
 
 const threshold = 0.5;
 const rootMargin = "0px";
-const delayMillis = 0;
+const delayMillis = 1000;
 const observer = JobObserver<HTMLButtonElement>(
   threshold,
   rootMargin,
