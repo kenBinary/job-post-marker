@@ -1,7 +1,9 @@
 import { LOCAL_STORAGE_KEY_PREFIX } from "../../constants/keyPrefixes";
 import { LOCAL_STORAGE_VALUE } from "../../constants/keyValues";
 import type { OLJ_AUTO_MARK_TOGGLE_STATE } from "../../types/chrome-storage-local.types";
+import { getFromLocal } from "../../utils/chromeStorage";
 import { JobObserver } from "../../utils/observer";
+import { toggleAutoMarkOnShiftE } from "../../utils/shortcutKeysActions";
 
 function markAsViewed(button: HTMLButtonElement) {
   const jobKey = button.getAttribute("data-job-key");
@@ -109,9 +111,9 @@ export function setupOljMarker() {
     }
 
     jobButtons.forEach(async (button) => {
-      const toggleState = (await chrome.storage.local.get([
+      const toggleState = await getFromLocal<OLJ_AUTO_MARK_TOGGLE_STATE>([
         "oljAutoMarkToggleState",
-      ])) as Partial<OLJ_AUTO_MARK_TOGGLE_STATE>;
+      ]);
 
       if (
         toggleState.oljAutoMarkToggleState !== undefined &&
@@ -136,4 +138,6 @@ export function setupOljMarker() {
       }
     }
   });
+
+  toggleAutoMarkOnShiftE<OLJ_AUTO_MARK_TOGGLE_STATE>("oljAutoMarkToggleState");
 }

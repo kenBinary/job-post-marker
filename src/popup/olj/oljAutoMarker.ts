@@ -1,9 +1,10 @@
 import type { OLJ_AUTO_MARK_TOGGLE_STATE } from "../../types/chrome-storage-local.types";
+import { getFromLocal, setToLocal } from "../../utils/chromeStorage";
 
 export async function oljAutoMarkerSetup() {
-  const initAutoToggleState = (await chrome.storage.local.get([
+  const initAutoToggleState = await getFromLocal<OLJ_AUTO_MARK_TOGGLE_STATE>([
     "oljAutoMarkToggleState",
-  ])) as Partial<OLJ_AUTO_MARK_TOGGLE_STATE>;
+  ]);
 
   const oljAutoMarkToggle = document.getElementById(
     "olj-auto-mark-toggle"
@@ -13,12 +14,12 @@ export async function oljAutoMarkerSetup() {
   }
 
   oljAutoMarkToggle.addEventListener("change", async () => {
-    const toggleState = (await chrome.storage.local.get([
+    const toggleState = await getFromLocal<OLJ_AUTO_MARK_TOGGLE_STATE>([
       "oljAutoMarkToggleState",
-    ])) as Partial<OLJ_AUTO_MARK_TOGGLE_STATE>;
+    ]);
 
     if (toggleState.oljAutoMarkToggleState !== undefined) {
-      await chrome.storage.local.set({
+      await setToLocal<OLJ_AUTO_MARK_TOGGLE_STATE>({
         oljAutoMarkToggleState: !toggleState.oljAutoMarkToggleState,
       });
       oljAutoMarkToggle.checked = !toggleState.oljAutoMarkToggleState;
