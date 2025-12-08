@@ -6,23 +6,36 @@
     <link rel="stylesheet" href="src/popup.css" />
     <title>job-search-tools-extension</title>
   </head>
-  <body class="w-[330px] h-[500px]">
+  <body class="w-[330px]">
     <header
       class="flex flex-col justify-between items-center p-4 bg-slate-800 text-white"
     >
       <h1 class="text-xl font-bold">Job tracker</h1>
-      <p>Manage your job search tracking</p>
+      <p>Track your job search progress</p>
     </header>
 
-    <main class="p-2 h-full overflow-y-auto border">
+    <main class="p-2 max-h-[400px] overflow-y-auto border">
+      <div class="mb-4 rounded border shadow-lg p-2 bg-gray-100 flex gap-2">
+        <div class="w-8 self-baseline">
+          <img
+            class="w-full h-full"
+            src="./src/assets/idea-svgrepo-com.svg"
+            alt="light bulb idea"
+          />
+        </div>
+        <div class="text-sm">
+          <p class="font-bold">Keyboard Shortcut</p>
+          Press <kbd class="kbd kbd-sm">Shift</kbd> +
+          <kbd class="kbd kbd-sm">E</kbd> to quickly toggle Auto Mark on/off
+        </div>
+      </div>
+
       <div class="mb-4 rounded border shadow-lg p-2 bg-gray-100">
         <div class="flex gap-2 justify-between items-center mb-2">
           <div class="flex gap-2 items-center">
             <div class="avatar">
               <div class="w-8 rounded">
-                <img
-                  src="https://img.daisyui.com/images/profile/demo/batperson@192.webp"
-                />
+                <img src="./src/assets/job-svgrepo-com.svg" alt="job icon" />
               </div>
             </div>
             <p class="text-base">OnlineJobs.ph</p>
@@ -40,6 +53,13 @@
         </div>
       </div>
     </main>
+
+    <footer>
+      <div class="p-2 bg-slate-800 text-white text-center text-sm">
+        <p>Happy job hunting!</p>
+      </div>
+    </footer>
+
     <script type="module" src="/src/popup.ts"></script>
   </body>
 </html>
