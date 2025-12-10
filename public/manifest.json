@@ -1,6 +1,6 @@
 {
-  "name": "OLJ Tools",
-  "description": "A set of tools for OLJ",
+  "name": "job post marker",
+  "description": "A set of tools to help you mark job posts you've already applied/seen to.",
   "version": "0.0.0",
   "manifest_version": 3,
   "permissions": ["activeTab", "storage"],
