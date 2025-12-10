@@ -1,3 +1,9 @@
+import type { autoMarkState } from "../constants/autoMarkStateKeys";
+
 export type OLJ_AUTO_MARK_TOGGLE_STATE = {
-  oljAutoMarkToggleState: boolean;
+  [autoMarkState.olj]: boolean;
+};
+
+export type LINKEDIN_AUTO_MARK_TOGGLE_STATE = {
+  [autoMarkState.linkedin]: boolean;
 };
