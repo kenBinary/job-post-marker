@@ -1,5 +1,7 @@
 .marked-as-viewed-btn {
   background-color: oklch(70.7% 0.165 254.624);
+  min-width: max-content;
+  max-width: 100%;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -10,6 +12,8 @@
 
 .btn-viewed {
   background-color: oklch(42.4% 0.199 265.638);
+  min-width: max-content;
+  max-width: 100%;
   color: black;
   border: none;
   padding: 5px 10px;
