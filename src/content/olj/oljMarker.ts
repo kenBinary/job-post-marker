@@ -110,20 +110,20 @@ export function setupOljMarker() {
       unmarkAsViewed(newButton);
     }
 
-    jobButtons.forEach(async (button) => {
-      const toggleState = await getFromLocal<OLJ_AUTO_MARK_TOGGLE_STATE>([
-        "oljAutoMarkToggleState",
-      ]);
-
-      if (
-        toggleState.oljAutoMarkToggleState !== undefined &&
-        toggleState.oljAutoMarkToggleState === true
-      ) {
-        observer.observe(button);
-      }
-    });
-
     job.appendChild(newButton);
+  });
+
+  jobButtons.forEach(async (button) => {
+    const toggleState = await getFromLocal<OLJ_AUTO_MARK_TOGGLE_STATE>([
+      "oljAutoMarkToggleState",
+    ]);
+
+    if (
+      toggleState.oljAutoMarkToggleState !== undefined &&
+      toggleState.oljAutoMarkToggleState === true
+    ) {
+      observer.observe(button);
+    }
   });
 
   chrome.storage.onChanged.addListener((changes, areaName) => {
