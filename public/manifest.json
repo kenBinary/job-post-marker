@@ -10,7 +10,10 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.onlinejobs.ph/*"],
+      "matches": [
+        "https://www.onlinejobs.ph/*",
+        "https://www.linkedin.com/jobs/*"
+      ],
       "js": ["content.js"],
       "css": ["content.css"]
     }
