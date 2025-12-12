@@ -65,3 +65,4 @@ MIT License
 ## TODO
 
 - [ ] add way to control observer config from popup
+- [ ] add option to configure shortcut key
