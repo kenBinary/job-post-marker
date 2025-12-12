@@ -37,3 +37,13 @@
   font-weight: 500;
   border: 1px solid #334155;
 }
+
+.indeedCtaContianer {
+  display: flex !important;
+  width: fit-content !important;
+  align-items: center !important;
+
+  button {
+    height: max-content !important;
+  }
+}

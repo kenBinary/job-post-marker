@@ -12,7 +12,8 @@
     {
       "matches": [
         "https://www.onlinejobs.ph/*",
-        "https://www.linkedin.com/jobs/*"
+        "https://www.linkedin.com/jobs/*",
+        "https://*.indeed.com/jobs*"
       ],
       "js": ["content.js"],
       "css": ["content.css"]

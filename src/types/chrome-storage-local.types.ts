@@ -7,3 +7,7 @@ export type OLJ_AUTO_MARK_TOGGLE_STATE = {
 export type LINKEDIN_AUTO_MARK_TOGGLE_STATE = {
   [autoMarkState.linkedin]: boolean;
 };
+
+export type INDEED_AUTO_MARK_TOGGLE_STATE = {
+  [autoMarkState.indeed]: boolean;
+};
