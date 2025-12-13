@@ -11,3 +11,7 @@ export type LINKEDIN_AUTO_MARK_TOGGLE_STATE = {
 export type INDEED_AUTO_MARK_TOGGLE_STATE = {
   [autoMarkState.indeed]: boolean;
 };
+
+export type JOBSTREET_AUTO_MARK_TOGGLE_STATE = {
+  [autoMarkState.jobstreet]: boolean;
+};

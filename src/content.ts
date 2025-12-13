@@ -2,6 +2,8 @@ import { setupOljMarker } from "./content/olj/oljMarker";
 import "./content.css";
 import { setupLinkedinMarker } from "./content/linkedin/linkedinMarker";
 import { setupIndeedMarker } from "./content/indeed/indeedMarker";
+import { setupJobstreetMarker } from "./content/jobstreet/jobstreetMarker.ts";
+import { observeJobStreetJobs } from "./content/jobstreet/observer.ts";
 
 const hostName = window.location.hostname;
 
@@ -11,4 +13,7 @@ if (hostName.includes("onlinejobs.ph")) {
   setupLinkedinMarker();
 } else if (hostName.includes("indeed.com")) {
   setupIndeedMarker();
+} else if (hostName.includes("jobstreet.com")) {
+  setupJobstreetMarker();
+  observeJobStreetJobs();
 }
