@@ -4,3 +4,5 @@ export const autoMarkState = {
   indeed: "indeedAutoMarkToggleState",
   jobstreet: "jobstreetAutoMarkToggleState",
 } as const;
+
+export const SHORTCUT_STORAGE_KEY = "shortcutConfig" as const;

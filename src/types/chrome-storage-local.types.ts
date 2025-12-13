@@ -15,3 +15,10 @@ export type INDEED_AUTO_MARK_TOGGLE_STATE = {
 export type JOBSTREET_AUTO_MARK_TOGGLE_STATE = {
   [autoMarkState.jobstreet]: boolean;
 };
+
+export type SHORTCUT_CONFIG = {
+  shortcutConfig: {
+    modifier: "shift" | "alt";
+    key: string;
+  };
+};

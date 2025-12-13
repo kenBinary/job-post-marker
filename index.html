@@ -15,18 +15,57 @@
     </header>
 
     <main class="p-2 max-h-[400px] overflow-y-auto border">
-      <div class="mb-4 rounded border shadow-lg p-2 bg-gray-100 flex gap-2">
-        <div class="w-8 self-baseline">
-          <img
-            class="w-full h-full"
-            src="./src/assets/idea-svgrepo-com.svg"
-            alt="light bulb idea"
-          />
+      <div class="mb-4 rounded border shadow-lg p-2 bg-gray-100">
+        <div class="flex gap-2">
+          <div class="w-8 self-baseline">
+            <img
+              class="w-full h-full"
+              src="./src/assets/idea-svgrepo-com.svg"
+              alt="light bulb idea"
+            />
+          </div>
+          <div class="text-sm flex-1">
+            <p class="font-bold mb-1">Keyboard Shortcut</p>
+            <p class="mb-2">
+              Press
+              <kbd id="current-shortcut-display" class="kbd kbd-sm"
+                >Shift+E</kbd
+              >
+              to quickly toggle Auto Mark on/off
+            </p>
+            <button
+              id="toggle-shortcut-config-btn"
+              class="btn btn-xs btn-outline"
+            >
+              Set New Shortcut
+            </button>
+          </div>
         </div>
-        <div class="text-sm">
-          <p class="font-bold">Keyboard Shortcut</p>
-          Press <kbd class="kbd kbd-sm">Shift</kbd> +
-          <kbd class="kbd kbd-sm">E</kbd> to quickly toggle Auto Mark on/off
+
+        <div
+          id="shortcut-config-panel"
+          class="mt-3 pt-3 border-t border-gray-300 hidden"
+        >
+          <p class="text-xs text-gray-600 mb-2">
+            Click Capture and press your desired shortcut combination
+          </p>
+          <div class="flex gap-2 items-center mb-2">
+            <input
+              type="text"
+              id="shortcut-input"
+              readonly
+              placeholder="Click Capture to set..."
+              class="input input-sm input-bordered flex-1 bg-gray-50 text-xs"
+            />
+            <button id="capture-shortcut-btn" class="btn btn-sm btn-primary">
+              Capture
+            </button>
+          </div>
+          <div id="shortcut-validation-msg" class="text-xs mb-2"></div>
+          <p class="text-xs text-gray-500">
+            <strong>Note:</strong> Only Shift and Alt modifiers are supported.
+            Avoid browser-reserved shortcuts.
+          </p>
         </div>
       </div>
 

@@ -1,11 +1,28 @@
+import { SHORTCUT_STORAGE_KEY } from "../constants/autoMarkStateKeys";
+import type { SHORTCUT_CONFIG } from "../types/chrome-storage-local.types";
 import { getFromLocal, setToLocal } from "./chromeStorage";
 
 export function toggleAutoMarkOnShiftE<T>(storageKey: keyof T) {
   document.addEventListener("keydown", async (event) => {
-    const isShiftPressed = event.shiftKey;
-    const isEKey = event.key === "E";
+    const shortcutConfig = await getFromLocal<SHORTCUT_CONFIG>([
+      SHORTCUT_STORAGE_KEY,
+    ]);
 
-    if (isShiftPressed && isEKey) {
+    const config = shortcutConfig[SHORTCUT_STORAGE_KEY];
+
+    const modifier = config?.modifier || "shift";
+    const key = config?.key || "E";
+
+    const isModifierPressed =
+      modifier === "shift" ? event.shiftKey : event.altKey;
+    const isKeyPressed = event.key.toUpperCase() === key.toUpperCase();
+
+    const noExtraModifiers =
+      !event.ctrlKey &&
+      !event.metaKey &&
+      (modifier === "shift" ? !event.altKey : !event.shiftKey);
+
+    if (isModifierPressed && isKeyPressed && noExtraModifiers) {
       event.preventDefault();
 
       const toggleState = await getFromLocal<T>([storageKey]);

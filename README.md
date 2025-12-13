@@ -65,5 +65,5 @@ MIT License
 ## TODO
 
 - [ ] add way to control observer config from popup
-- [ ] add option to configure shortcut key
+- [x] add option to configure shortcut key
 - [ ] add support for jobstreet recommended jobs
