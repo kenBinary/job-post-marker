@@ -20,7 +20,7 @@ export function setupJobstreetMarker() {
 
     const bookMarkElement = buttonContainer.firstElementChild;
 
-    const newButton = createMarkingButton(jobId);
+    const newButton = createMarkingButton(jobId, "JOBSTREET_JOB_PREFIX");
     buttonContainer.insertBefore(newButton, bookMarkElement);
 
     const toggleState = await getFromLocal<JOBSTREET_AUTO_MARK_TOGGLE_STATE>([

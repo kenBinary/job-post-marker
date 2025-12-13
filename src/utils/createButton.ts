@@ -2,8 +2,12 @@ import { LOCAL_STORAGE_KEY_PREFIX } from "../constants/keyPrefixes";
 import { LOCAL_STORAGE_VALUE } from "../constants/keyValues";
 import { markAsViewed, unmarkAsViewed } from "./buttonMarkers";
 
-export function createMarkingButton(jobId: string): HTMLButtonElement {
-  const jobKey = `${LOCAL_STORAGE_KEY_PREFIX.JOBSTREET_JOB_PREFIX}${jobId}`;
+type prefix = keyof typeof LOCAL_STORAGE_KEY_PREFIX;
+export function createMarkingButton(
+  jobId: string,
+  keyPrefix: prefix
+): HTMLButtonElement {
+  const jobKey = `${LOCAL_STORAGE_KEY_PREFIX[keyPrefix]}${jobId}`;
   const jobState = localStorage.getItem(jobKey);
   if (!jobState) {
     localStorage.setItem(jobKey, LOCAL_STORAGE_VALUE.NOT_VIEWED);
