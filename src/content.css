@@ -1,25 +1,32 @@
 .marked-as-viewed-btn {
-  background-color: oklch(70.7% 0.165 254.624);
+  background-color: oklch(55.1% 0.027 264.364);
+  color: white;
   min-width: max-content;
   max-width: 100%;
-  color: white;
   border: none;
   padding: 5px 10px;
   cursor: crosshair;
   border-radius: 3px;
   z-index: 1000;
+  &:hover {
+    background-color: oklch(44.6% 0.03 256.802);
+  }
 }
 
 .btn-viewed {
-  background-color: oklch(42.4% 0.199 265.638);
+  background-color: oklch(54.6% 0.245 262.881);
+  color: white;
   min-width: max-content;
   max-width: 100%;
-  color: black;
   border: none;
   padding: 5px 10px;
   cursor: crosshair;
   border-radius: 3px;
   z-index: 1000;
+
+  &:hover {
+    background-color: oklch(48.8% 0.243 264.376);
+  }
 }
 
 .toast-notification {
