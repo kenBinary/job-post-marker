@@ -16,6 +16,10 @@ export type JOBSTREET_AUTO_MARK_TOGGLE_STATE = {
   [autoMarkState.jobstreet]: boolean;
 };
 
+export type BOSSJOB_AUTO_MARK_TOGGLE_STATE = {
+  [autoMarkState.bossjob]: boolean;
+};
+
 export type SHORTCUT_CONFIG = {
   shortcutConfig: {
     modifier: "shift" | "alt";
