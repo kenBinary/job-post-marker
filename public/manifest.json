@@ -20,7 +20,8 @@
         "https://*.indeed.com/jobs*",
         "https://*.jobstreet.com/*",
         "https://bossjob.ph/*",
-        "https://*.bossjob.ph/*"
+        "https://*.bossjob.ph/*",
+        "https://www.mynimo.com/*"
       ],
       "js": ["content.js"],
       "css": ["content.css"]

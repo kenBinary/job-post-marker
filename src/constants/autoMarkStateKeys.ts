@@ -4,6 +4,7 @@ export const autoMarkState = {
   indeed: "indeedAutoMarkToggleState",
   jobstreet: "jobstreetAutoMarkToggleState",
   bossjob: "bossjobAutoMarkToggleState",
+  mynimo: "mynimoAutoMarkToggleState",
 } as const;
 
 export const SHORTCUT_STORAGE_KEY = "shortcutConfig" as const;

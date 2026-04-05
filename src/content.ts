@@ -5,6 +5,7 @@ import { setupIndeedMarker } from "./content/indeed/indeedMarker";
 import { setupJobstreetMarker } from "./content/jobstreet/jobstreetMarker.ts";
 import { observeJobStreetJobs } from "./content/jobstreet/observer.ts";
 import { setupBossjobMarker } from "./content/bossjob/bossjobMarker.ts";
+import { setupMynimoMarker } from "./content/mynimo/mynimoMarker.ts";
 
 const hostName = window.location.hostname;
 
@@ -22,4 +23,6 @@ if (hostName.includes("onlinejobs.ph")) {
   setTimeout(() => {
     setupBossjobMarker();
   }, 3000);
+} else if (hostName.includes("mynimo.com")) {
+  setupMynimoMarker();
 }
