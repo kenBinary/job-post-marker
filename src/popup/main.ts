@@ -1,1 +1,3 @@
-console.log("Hello, Job Post Marker!");
+import { oljAutoMarkerSetup } from "./olj/oljAutoMarker";
+
+await oljAutoMarkerSetup();

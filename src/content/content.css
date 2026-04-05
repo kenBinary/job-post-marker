@@ -1,0 +1,57 @@
+.marked-as-viewed-btn {
+  background-color: oklch(55.1% 0.027 264.364);
+  color: white;
+  min-width: max-content;
+  max-width: 100%;
+  border: none;
+  padding: 5px 10px;
+  cursor: crosshair;
+  border-radius: 3px;
+  z-index: 1000;
+  &:hover {
+    background-color: oklch(44.6% 0.03 256.802);
+  }
+}
+
+.btn-viewed {
+  background-color: oklch(54.6% 0.245 262.881);
+  color: white;
+  min-width: max-content;
+  max-width: 100%;
+  border: none;
+  padding: 5px 10px;
+  cursor: crosshair;
+  border-radius: 3px;
+  z-index: 1000;
+
+  &:hover {
+    background-color: oklch(48.8% 0.243 264.376);
+  }
+}
+
+.toast-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1e293b;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 0.5rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 1001;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #334155;
+}
+
+.indeedCtaContianer {
+  display: flex !important;
+  width: fit-content !important;
+  align-items: center !important;
+
+  button {
+    height: max-content !important;
+  }
+}
