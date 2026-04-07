@@ -1,3 +1,4 @@
+import { setupShortcutConfig } from "./shortcutConfig";
 import { bossjobAutoMarkerSetup } from "./bossjob/bossjobAutoMarker";
 import { indeedAutoMarkerSetup } from "./indeed/indeedAutoMarker";
 import { jobstreetAutoMarkerSetup } from "./jobstreet/jobstreetAutoMarker";
@@ -11,3 +12,4 @@ await indeedAutoMarkerSetup();
 await jobstreetAutoMarkerSetup();
 await bossjobAutoMarkerSetup();
 await mynimoAutoMarkerSetup();
+await setupShortcutConfig();
