@@ -1,7 +1,7 @@
 export function setupBossjobObservers() {
   console.log("Setting up Bossjob observers...");
   const bodyNode = document.querySelector("body");
-  const bodyObserverCallback: MutationCallback = (mutationsList, observer) => {
+  const bodyObserverCallback: MutationCallback = (mutationsList, _) => {
     mutationsList.forEach((mutation) => {
       if (mutation.addedNodes.length) {
         mutation.addedNodes.forEach((node) => {
