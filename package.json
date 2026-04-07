@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "private": true,
   "module": "true",
-  "packageManager": "pnpm@10.32.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build"
