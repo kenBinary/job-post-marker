@@ -18,7 +18,7 @@ export default defineManifest({
   },
   content_scripts: [
     {
-      js: ["src/content/main.ts"],
+      js: ["src/content/content.ts"],
       css: ["src/content/content.css"],
       matches: [
         "https://www.onlinejobs.ph/*",
