@@ -90,6 +90,34 @@
       </div>
 
       <div class="mb-4 rounded border shadow-lg p-2 bg-gray-100">
+        <div class="flex gap-2">
+          <div class="w-8 self-baseline">
+            <img
+              src="../assets/point-in-time-svgrepo-com.svg"
+              alt="point in time"
+            />
+          </div>
+          <div class="text-sm flex-1">
+            <p class="font-bold mb-1">Observer Delay</p>
+            <p class="mb-2">Delay before a job is marked viewed (ms)</p>
+            <div class="flex gap-2 items-center mb-2">
+              <input
+                type="number"
+                id="observer-delay-input"
+                min="0"
+                max="5000"
+                class="input input-sm input-bordered flex-1 bg-gray-50 text-xs"
+              />
+              <button id="save-delay-btn" class="btn btn-sm btn-primary">
+                Save
+              </button>
+            </div>
+            <div id="delay-validation-msg" class="text-xs mb-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4 rounded border shadow-lg p-2 bg-gray-100">
         <div class="flex gap-2 justify-between items-center mb-2">
           <div class="flex gap-2 items-center">
             <div class="avatar">

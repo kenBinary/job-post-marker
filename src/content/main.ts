@@ -6,6 +6,9 @@ import { setupJobstreetMarker } from "./jobstreet-marker/jobstreetMarker";
 import { observeJobStreetJobs } from "./jobstreet-marker/observer";
 import { setupBossjobMarker } from "./bossjob-marker/bossjobMarker";
 import { setupMynimoMarker } from "./mynimo/mynimoMarker";
+import { initObserverDelay } from "./utils/observerDelay";
+
+initObserverDelay();
 
 const hostName = window.location.hostname;
 

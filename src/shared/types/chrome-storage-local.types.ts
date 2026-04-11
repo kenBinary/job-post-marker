@@ -30,3 +30,9 @@ export type SHORTCUT_CONFIG = {
     key: string;
   };
 };
+
+export type OBSERVER_DELAY_CONFIG = {
+  observerDelayConfig: {
+    delay: number;
+  };
+};

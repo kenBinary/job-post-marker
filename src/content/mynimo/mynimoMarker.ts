@@ -5,12 +5,13 @@ import { markAsViewed } from "../utils/buttonMarkers";
 import { getFromLocal } from "@/shared/utils/chromeStorage";
 import { createMarkingButton } from "../utils/createButton";
 import { JobObserver } from "../utils/observer";
+import { getSharedObserverDelay } from "../utils/observerDelay";
 import { toggleAutoMarkOnKeyPress } from "../utils/shortcutKeysActions";
 
 const mynimoJobObserver = JobObserver<HTMLButtonElement>(
   0.5,
   "0px",
-  1000,
+  getSharedObserverDelay,
   (element) => {
     markAsViewed(element);
   },

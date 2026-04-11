@@ -1,7 +1,7 @@
 export function JobObserver<T extends Element>(
   threshold: number,
   rootMargin: string,
-  delayMillis: number,
+  getDelayMillis: () => number,
   markAsViewed: (elementToMark: T) => void,
 ) {
   return new IntersectionObserver(
@@ -11,7 +11,7 @@ export function JobObserver<T extends Element>(
           const card = entry.target as T;
           setTimeout(() => {
             markAsViewed(card);
-          }, delayMillis);
+          }, getDelayMillis());
         }
       });
     },

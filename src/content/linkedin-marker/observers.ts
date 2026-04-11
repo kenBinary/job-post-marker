@@ -1,14 +1,14 @@
 import { markAsViewed } from "../utils/buttonMarkers";
 import { JobObserver } from "../utils/observer";
 import { injectMarker } from "./injectMarker";
+import { getSharedObserverDelay } from "../utils/observerDelay";
 
 export const threshold = 0.5;
 const rootMargin = "0px";
-const delayMillis = 1000;
 export const linkedinBtnObserver = JobObserver<HTMLButtonElement>(
   threshold,
   rootMargin,
-  delayMillis,
+  getSharedObserverDelay,
   (element) => {
     markAsViewed(element);
   },

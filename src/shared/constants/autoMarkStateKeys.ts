@@ -8,3 +8,5 @@ export const autoMarkState = {
 } as const;
 
 export const SHORTCUT_STORAGE_KEY = "shortcutConfig" as const;
+
+export const OBSERVER_DELAY_STORAGE_KEY = "observerDelayConfig" as const;
